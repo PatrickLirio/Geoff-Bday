@@ -1,0 +1,185 @@
+body {
+  margin: 0;
+  font-family: "Rubik", sans-serif;
+  background-color: #1b1b1b;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  overflow-x: hidden;
+  position: relative;
+}
+
+h1 {
+  font-family: "Bangers", cursive;
+  font-size: 4rem;
+  margin-bottom: 0.5rem;
+  color: #ffcc00;
+  text-shadow: 3px 3px #000;
+  display: flex;
+  justify-content:center;
+}
+
+h2 {
+  font-size: 1.7rem;
+  color: #ffffff;
+  margin-top: 0.5rem;
+}
+
+.highlight {
+  color: #ff3c3c;
+  font-weight: bold;
+}
+
+.checkered {
+  background: repeating-linear-gradient(
+    45deg,
+    #000,
+    #000 10px,
+    #fff 10px,
+    #fff 20px
+  );
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 700px;
+  border-radius: 16px;
+  box-shadow: 0 0 10px #ffcc00;
+  position: relative;
+  z-index: 2;
+}
+
+.details {
+  background: #2c2c2c;
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-top: 1rem;
+  font-size: 1.5rem;
+}
+
+.car-img {
+  width: 250px;
+  animation: zoomIn 2s ease-in-out infinite alternate;
+}
+
+.rsvp {
+  margin-top: 2rem;
+  font-weight: bold;
+  font-size: 1.4rem;
+  color: #ffcc00;
+}
+
+a {
+  color: #ffcc00;
+  text-decoration: none;
+}
+
+.divider {
+  margin: 2rem 0;
+  font-size: 2rem;
+  color: #ffcc00;
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(1) rotate(-1deg);
+  }
+  100% {
+    transform: scale(1.05) rotate(1deg);
+  }
+}
+
+/* Confetti effect */
+.confetti::before,
+.confetti::after {
+  content: "";
+  position: fixed;
+  top: -50px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+  background-size: contain;
+  opacity: 0.1;
+  z-index: 0;
+  pointer-events: none;
+  animation: confettiFall 20s linear infinite;
+}
+
+@keyframes confettiFall {
+  0% {
+    background-position: 0 -100px;
+  }
+  100% {
+    background-position: 0 1000px;
+  }
+}
+
+@keyframes raceAcross {
+  0% {
+    transform: translateX(100vw);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-1000px);
+    opacity: 0;
+  }
+}
+
+.race-track {
+  position: relative;
+  width: 100%;
+  height: 120px;
+  margin-top: 3rem;
+  overflow: hidden;
+}
+
+.ground {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 25px;
+  background: repeating-linear-gradient(
+    45deg,
+    #444,
+    #444 20px,
+    #666 20px,
+    #666 40px
+  );
+  border-top: 4px solid #ccc;
+  z-index: 1;
+}
+.car-img {
+  position: absolute;
+  width: 150px;
+  margin: 2rem auto 0;
+  display: block;
+}
+
+.race-left {
+  animation: raceAcross 5s linear infinite;
+  bottom: px;
+  left: 0;
+  z-index: 2;
+}
+
+@keyframes raceAcross {
+  0% {
+    transform: translateX(100vw);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-200px);
+    opacity: 0;
+  }
+}
